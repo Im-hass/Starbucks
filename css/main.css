@@ -165,6 +165,10 @@ header  .main-menu .item .item__contents .contents__menu > ul > li ul li {
   cursor: pointer;
 }
 
+header  .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  color: #669900;
+}
+
 header  .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;
   font-size: 12px;
