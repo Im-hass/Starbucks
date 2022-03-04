@@ -40,3 +40,12 @@ window.addEventListener('scroll', _.throttle(function () {
 
 // gsap : 애니메이션 처리 라이브러리
 // gsap.to(요소, 지속시간s, 옵션); 요소를 애니메이션 처리함
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+
+fadeEls.forEach(function (fadeEl, index) { // 반복횟수 : index
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7, // 0.7, 1.4, 2.1, 2.7
+    opacity: 1,
+  })
+});
