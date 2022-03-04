@@ -49,3 +49,10 @@ fadeEls.forEach(function (fadeEl, index) { // 반복횟수 : index
     opacity: 1,
   })
 });
+
+// Swiper(css 선택자, 옵션)
+new Swiper('.notice-line .swiper', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true,
+});
