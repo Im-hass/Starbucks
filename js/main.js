@@ -75,3 +75,19 @@ new Swiper('.promotion .swiper', {
     nextEl: '.promotion .swiper-next',
   },
 });
+
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener('click', function () {
+  isHidePromotion = !isHidePromotion;
+
+  if (isHidePromotion) {
+    // 숨기기
+    promotionEl.classList.add('hide');
+  } else {
+    // 보이기
+    promotionEl.classList.remove('hide');
+  }
+});
