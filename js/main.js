@@ -144,3 +144,6 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show') // (토클할 요소, '토클할 클래스 이름');
     .addTo(new ScrollMagic.Controller());
 });
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); // 2022
