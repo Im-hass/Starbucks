@@ -16,6 +16,13 @@ searchInputEl.addEventListener('blur', function () {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo: 0, // 스크롤 위치 (0: 최상단으로) 이동
+  });
+});
 
 window.addEventListener('scroll', _.throttle(function () {
   console.log('scroll');
@@ -26,12 +33,22 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 0,
       display: 'none'
     }); // 0.6s
+    
+    // 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0,
+    });
   } else {
     // 배지 보이기
     // badgeEl.style.display = 'block';
     gsap.to(badgeEl, 0.6, {
       opacity: 1,
       display: 'block'
+    });
+
+    // 버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100,
     });
   }
 }, 300)); // 0.3s
