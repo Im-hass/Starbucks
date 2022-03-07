@@ -117,3 +117,18 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+
+spyEls.forEach(function (spyEl) {
+  // 특정 화면이 화면 내에 들어오면 인식한다.
+  // .Scene() : 요소를 감시하는 옵션을 지정해준다.
+  // .setClassToggle() : 클래스를 넣었다 뺐다 지정해준다.
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8, // 인식될 위치(뷰포트의 가장 위:0, 가장 아래:1)
+    })
+    .setClassToggle(spyEl, 'show') // (토클할 요소, '토클할 클래스 이름');
+    .addTo(new ScrollMagic.Controller());
+});
